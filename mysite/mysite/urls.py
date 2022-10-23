@@ -23,5 +23,6 @@ urlpatterns = [
     path('project/', include('project.urls')),
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='project/', permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -20,3 +20,4 @@ class ProjektasListView(generic.ListView):
     model = Projektas
     template_name = 'projektai.html'
     context_object_name = 'projektai'
+    paginate_by = 5
