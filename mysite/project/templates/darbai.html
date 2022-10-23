@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<title>{% block title %}Projekto darbai{% endblock %}</title>
+
+{% block content %}
+<h1>Projekto darbai</h1>
+
+{% for darbas in darbai %}
+<li>{{ darbas }}</li>
+{% endfor %}
+
+{% endblock %}

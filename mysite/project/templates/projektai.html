@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+<title>{% block title %}Visi projektai{% endblock %}</title>
+
+{% block content %}
+<h1>Visi projektai</h1>
+{% if projektai %}
+{% for projektas in projektai %}
+{{ projektas }}
+{% endfor %}
+{% else %}
+<p>Vykdomų projektų nėra</p>
+{% endif %}
+{% endblock %}

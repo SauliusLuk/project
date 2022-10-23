@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<title>{% block title %}Projektų portalas{% endblock %}</title>
+
+{% block content %}
+<h1>Projektai</h1>
+<p>Projektų valdymo portalas</p>
+<ul>
+    <li><strong>Vykdomu projektu skaicius:</strong> {{ visi_projektai }}</li>
+    <li><strong>Musu darbuotoju skaicius:</strong> {{ visi_darbuotojai }}</li>
+  </ul>
+{% endblock %}

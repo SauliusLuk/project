@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<title>{% block title %}Projekto darbas{% endblock %}</title>
+
+{% block content %}
+<p><strong> </strong></p>
+<p>Smulkesnins aprašymas: {{ priskirtas_darbas.pastabos }} </p>
+
+<p><strong>Kas atsakingas</strong></p>
+{{ darbuotoju_list }}
+
+{% endblock %}
