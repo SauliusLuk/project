@@ -13,6 +13,7 @@ class Projektas(models.Model):
     darbuotojai = models.ManyToManyField('Darbuotojas', max_length=200, help_text='Įveskite darbuotojo vardą ir pavardę')
     darbai = models.ForeignKey('Darbas', on_delete=models.SET_NULL, null=True, blank=True, max_length=200)
     saskaitos = models.ForeignKey('Saskaita', on_delete=models.SET_NULL, null=True, blank=True, help_text='Įveskite sąskaitos numerį')
+    nuotrauka = models.ImageField(default="default.png", upload_to="covers", null=True)
 
     def __str__(self):
         return f"{self.pavadinimas} - {self.klientas}"
