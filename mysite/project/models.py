@@ -84,3 +84,4 @@ class Saskaita(models.Model):
     class Meta:
         verbose_name = 'Sąskaita'
         verbose_name_plural = '5 - Sąskaitos'
+

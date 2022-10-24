@@ -20,4 +20,12 @@ class ProjektasListView(generic.ListView):
     model = Projektas
     template_name = 'projektai.html'
     context_object_name = 'projektai'
-    paginate_by = 5
+    paginate_by = 3
+
+class ManoProjektaiListView(generic.ListView):
+    model = Projektas
+    template_name = 'project/manoprojektai.html'
+    paginate_by = 3
+
+    def get_queryset(self):
+        return Projektas.objects.filter(vadovas=self.request.user)

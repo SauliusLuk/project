@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+<title>{% block title %}Visi projektai{% endblock %}</title>
+
+{% block content %}
+{% load static %}
+<h1>Visi projektai</h1>
+<ol>
+    {% for projektas in object_list %}
+    <li><a href="{{ projektas.pk }}"> {{ projektas }}</a> </li>
+    {% endfor %}
+</ol>
+
+
+<img src="{{ projektas.nuotrauka.url }}" class="card-img-top" style="width:200px" alt="...">
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; pirmas</a>
+            <a href="?page={{ page_obj.previous_page_number }}">atgal</a>
+        {% endif %}
+
+        <span class="current">
+            {{ page_obj.number }} iš {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">pirmyn</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">paskutinis &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
