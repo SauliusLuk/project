@@ -29,3 +29,6 @@ class ManoProjektaiListView(generic.ListView):
 
     def get_queryset(self):
         return Projektas.objects.filter(vadovas=self.request.user)
+
+class ManoProjektasDetailView(generic.DetailView):
+    model = Projektas
