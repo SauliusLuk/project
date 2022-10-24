@@ -2,17 +2,28 @@
 <title>{% block title %}Visi projektai{% endblock %}</title>
 
 {% block content %}
+{% load static %}
 <h1>Visi projektai</h1>
 <ol>
-{% if projektai %}
-{% for projektas in projektai %}
+    {% if projektai %}
+    {% for projektas in projektai %}
+    <img src="{{ projektas.nuotrauka.url }}" class="card-img-top" style="width:200px" alt="...">
     <li>{{ projektas }}</li>
-{% endfor %}
-{% else %}
-<p>Vykdomų projektų nėra</p>
-{% endif %}
+    {% endfor %}
+    {% else %}
+    <p>Vykdomų projektų nėra</p>
+    {% endif %}
 </ol>
-  <div class="pagination">
+
+
+{% for projektas in projektai %}
+<tr>
+    <img src="{{ projektas.nuotrauka.url }}" class="card-img-top" style="width:200px" alt="...">
+    <td>{{ projektas }}</td>
+</tr>
+{% endfor %}
+
+<div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
             <a href="?page=1">&laquo; pirmas</a>

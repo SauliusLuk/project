@@ -133,6 +133,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# media folder settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'project/media')
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = "/"
+
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
@@ -160,5 +167,3 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': True,
     'statusbar': True,
     }
-
-LOGIN_REDIRECT_URL = '/'

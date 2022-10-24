@@ -16,6 +16,8 @@ class ProjektasDetail(admin.ModelAdmin):
     list_display = ('pavadinimas', 'klientas', 'vadovas', 'display_darbuotojai', 'saskaitos')
     list_filter = ('pavadinimas', 'klientas', 'vadovas', 'saskaitos')
 
+class ProjektasID(admin.ModelAdmin):
+    readonly_fields = ('id',)
 
 class KlientasDetail(admin.ModelAdmin):
     list_display = ('vardas', 'pavarde', 'imone')
@@ -29,7 +31,7 @@ class DarbasDetail(admin.ModelAdmin):
     list_display = ('pavadinimas', 'pastabos')
 
 
-admin.site.register(Projektas, ProjektasAdmin)
+admin.site.register(Projektas, ProjektasAdmin,)
 admin.site.register(Klientas, KlientasDetail)
 admin.site.register(Darbuotojas)
 admin.site.register(Darbas, DarbasDetail)
