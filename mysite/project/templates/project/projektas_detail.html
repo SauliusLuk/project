@@ -1,1 +1,18 @@
-test
+{% extends "base.html" %}
+<title>{% block title %}Projektas{% endblock %}</title>
+
+{% block content %}
+{% load static %}
+
+<img src="{{ projektas.nuotrauka.url }}" class="card-img-top" style="width:200px" alt="...">
+<br>
+<br>
+<p><strong>Projektas:</strong> {{ projektas.pavadinimas }}<br>
+<strong>Projekto pabaiga:</strong> {{ projektas.pabaiga }}<br>
+<strong>Užsakovas:</strong> {{ projektas.klientas }}<br>
+<strong>Projekto vadovas:</strong> {{ projektas.vadovas }}<br>
+<strong>Projekto darbuotojai:</strong> {{ projektas.darbuotojai }}<br>
+<strong>Projekto darbai:</strong> {{ projektas.darbai }}</p>
+
+
+{% endblock %}
