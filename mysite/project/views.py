@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Projektas, Darbuotojas, Darbas
 from django.views import generic
 def index(request):
-    visi_projektai = list(Projektas.objects.all().values_list('pavadinimas',))
+    visi_projektai = Projektas.objects.all().count()
     visi_darbuotojai = Darbuotojas.objects.all().count()
 
     context = {
