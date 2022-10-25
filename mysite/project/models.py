@@ -14,6 +14,7 @@ class Projektas(models.Model):
     darbai = models.ForeignKey('Darbas', on_delete=models.SET_NULL, null=True, blank=True, max_length=200)
     saskaitos = models.ForeignKey('Saskaita', on_delete=models.SET_NULL, null=True, blank=True, help_text='Įveskite sąskaitos numerį')
     nuotrauka = models.ImageField('Nuotrauka', default="default.png", upload_to="covers", null=True)
+    aprasymas = HTMLField('Aprašymas', null=True, blank=True, max_length=2000)
 
     def __str__(self):
         return f"{self.pavadinimas} - {self.klientas}"

@@ -3,7 +3,7 @@
 
 {% block content %}
 <p><strong> </strong></p>
-<p>Smulkesnins aprašymas: {{ priskirtas_darbas.pastabos }} </p>
+<p>Smulkesnins aprašymas: {{ priskirtas_darbas.pastabos | safe  }} </p>
 
 <p><strong>Kas atsakingas</strong></p>
 {{ darbuotoju_list }}

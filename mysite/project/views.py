@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Projektas, Darbuotojas, Darbas
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 def index(request):
     visi_projektai = Projektas.objects.all().count()
     visi_darbuotojai = Darbuotojas.objects.all().count()
@@ -22,7 +23,7 @@ class ProjektasListView(generic.ListView):
     context_object_name = 'projektai'
     paginate_by = 3
 
-class ManoProjektaiListView(generic.ListView):
+class ManoProjektaiListView(generic.ListView, LoginRequiredMixin):
     model = Projektas
     template_name = 'project/manoprojektai.html'
     paginate_by = 3
