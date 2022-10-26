@@ -3,7 +3,12 @@
 
 {% block content %}
 <div class="container text-center">
-<h3>Projektų valdymo portalas</h3>
+<h3>Projektų portalas</h3>
+{% if user.is_authenticated %}
+    Sveiki, {{ user.get_username }}. Visus savo projektus rasite <a href="{% url 'manoprojektai' %}">čia</a>
+{% else %}
+<a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Prisijunkite, kad peržiūrėti savo projektus</a>
+{% endif %}
     <br>
     <br>
 <ul class="list-group">

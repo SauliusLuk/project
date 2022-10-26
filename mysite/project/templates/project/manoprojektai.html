@@ -3,12 +3,31 @@
 
 {% block content %}
 {% load static %}
-<h1>Visi projektai</h1>
-<ol>
-    {% for projektas in object_list %}
-    <li><a href="{{ projektas.pk }}"> {{ projektas }}</a> </li>
-    {% endfor %}
-</ol>
+<p><h3>Visi vartotojo <em>{{ user.get_username }}</em> projektai</h3></p>
+<br>
+
+<div class="container-fluid cxt-padded bg-faded">
+    <div class="container">
+
+        <div class="row row-cols-3 text-center">
+            {% for projektas in object_list %}
+            <figure>
+                <img src="{{ projektas.nuotrauka.url }}" style="max-width: 16rem;" alt="...">
+                <div class="card-body">
+                    <figcaption>
+                        <h5>
+                            <div class="col-sm"><a href="{{ projektas.pk }}"> {{ projektas.pavadinimas }}</a></div>
+                        </h5>
+                    </figcaption>
+                    <figcaption><p class="card-text">{{ projektas.aprasymas | safe }}</p></figcaption>
+                    <figcaption><strong>Projekto terminas:<br></strong> {{ projektas.pabaiga }}</figcaption>
+                </div>
+            </figure>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
 
 
 <div class="pagination">

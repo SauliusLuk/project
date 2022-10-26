@@ -53,7 +53,7 @@ class Darbuotojas(models.Model):
     pavarde = models.CharField('Pavardė', max_length=100, help_text='Įveskite darbuotojo pavardę')
 
     def __str__(self):
-        return f"{self.vardas} {self.pavarde}"
+        return f"{self.vardas} {self.pavarde};"
 
     class Meta:
         verbose_name = 'Darbuotojas'

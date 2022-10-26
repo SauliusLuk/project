@@ -11,8 +11,11 @@
 <strong>Projekto pabaiga:</strong> {{ projektas.pabaiga }}<br>
 <strong>Užsakovas:</strong> {{ projektas.klientas }}<br>
 <strong>Projekto vadovas:</strong> {{ projektas.vadovas }}<br>
-<strong>Projekto darbuotojai:</strong> {{ projektas.darbuotojai }}<br>
-<strong>Projekto darbai:</strong> {{ projektas.darbai }}</p>
+ <strong>Projekto darbuotojai:</strong>
+{% for darbuotojas in projektas.darbuotojai.all %}
+ {{ darbuotojas }}
+{% endfor %}<br>
+<strong>Projekto darbai:</strong> {{ projektas.darbai }}<br>
+<strong>Sąskaitos:</strong> {{ projektas.saskaitos }}</p>
 <strong>Projekto aprašymas:</strong> {{ projektas.aprasymas | safe }}</p>
-
 {% endblock %}

@@ -5,6 +5,7 @@ from .views import ProjektasListView, ManoProjektaiListView, ManoProjektasDetail
 urlpatterns = [
     path('', views.index, name='index'),
     path('darbai/', views.darbai, name='darbai'),
+    path('darbas/', views.darbas, name='darbas'),
     path('projektai/', ProjektasListView.as_view(), name='projektai'),
     path('manoprojektai/', views.ManoProjektaiListView.as_view(), name='manoprojektai'),
     path('manoprojektai/<int:pk>', views.ManoProjektasDetailView.as_view(), name='manoprojektas'),

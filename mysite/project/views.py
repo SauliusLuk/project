@@ -17,6 +17,10 @@ def darbai(request):
     context = {'Darbai': Darbas.objects.all(), }
     return render(request, 'darbai.html', context=context)
 
+def darbas(request):
+    context = {'Darbas': Darbas.objects.all(), }
+    return render(request, 'darbas.html', context=context)
+
 class ProjektasListView(generic.ListView):
     model = Projektas
     template_name = 'projektai.html'
